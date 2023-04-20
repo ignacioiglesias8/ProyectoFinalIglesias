@@ -62,7 +62,8 @@ async function obtenerProductos() {
             clima: await clima(-23.2375, -67.076389)
         },
     ];
-    console.log(productos);
+    return productos
 }
 
 obtenerProductos();
+console.log(productos)
