@@ -66,4 +66,3 @@ async function obtenerProductos() {
 }
 
 obtenerProductos();
-console.log(productos)
