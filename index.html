@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-xl bg-black navbar-dark">
+            <div class="container-fluid">
+                <div>
+                    <img class="navbar-brand" src="./media/images/logo.jpg" />
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapsibleNavbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav justify-content-around col-12">
+                        <li class="nav-item">
+                            <a class="nav-link font-nav" href="../index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link font-nav" href="../pages/tarifas.html">Tarifas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link font-nav" href="../pages/servicios.html">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link font-nav" href="../pages/salidas.html">Salidas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link font-nav" href="../pages/contacto.html">Contactar</a>
+                        </li>
+                    </ul>
+                </div>
+                <form class="d-flex">
+                    <input class="form-control me-1" type="text" placeholder="Search">
+                    <button class="btn btn-primary" type="button">Buscar</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="gradback">
+            <div class="row justify-content-center">
+                <div class="boxtitle softborder col-3 font-title grad1">Salidas
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="boxsubtitle softborder font-otrainfo grad1 col-5">
+                    <p>Seleccionar pack ingresando cantidad de pasajeros y clickeando agregar 
+                        en cada caso.</p>
+                    <p>Oprimir finalizar para obtener el monto total.</p> 
+                    <p>Seleccionar forma de pago.</p>
+                </div>
+            </div>
+
+            <div class="container col-md-8" id="cards">
+            </div>
+            <div class="container col-md-8">
+                <div class="row justify-content-around grad1 softborder rowmargin">
+                    <div class="col-6">
+                        <div class="justify-content-center rowmargin font-content softborder">
+                            <p>Packs seleccionado:</p>
+                            <div id="packsseleccionados"></div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="row justify-content-center rowmargin">
+                            <button class="boxprecio font-content grad1inv btn-primary" id="limpiar">Limpiar</button>
+                            <button class="boxprecio font-content grad1inv btn-primary" id="finalizar">Finalizar compra</button>
+                        </div>
+                        <div>
+                            <p class="font-content" id="avisocobro">El total de la compra es de $ .</p>
+                        </div>
+                        <div>
+                            <p class="font-content">Ingresar forma de pago:</p>
+                        </div>
+                        <div class="row justify-content-center rowmargin">
+                            <input type="radio" name="opciones" class="radiocobro" id="efectivo" value="efectivo"/>
+                            <label for="efectivo" class="font-content labelcobro">Efectivo</label>
+                            <input type="radio" name="opciones" class="radiocobro" id="debito" value="debito"/>
+                            <label for="débito" class="font-content labelcobro">Débito</label>
+                            <input type="radio" name="opciones" class="radiocobro" id="credito" value="credito"/>
+                            <label for="crédito" class="font-content labelcobro">Crédito</label>
+                        </div>
+                        <div>
+                            <p class="font-content" id="msjFinal"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-around fondo rowmargin">
+                </div>
+            </div>
+        </div>
+        </div>
+    </main>
+
+    <footer class="bg-black font-content">
+        <div class="row redes justify-content-center">
+            <div class="col-sm-4">
+                <a href="https://www.facebook.com" class="icon"><img class="icon"
+                    src="./media/icons/facebook.png" /></a>
+                <a href="https://www.instagram.com" class="icon"><img class="icon"
+                    src="./media/icons/instagram.png" /></a>
+                <a href="https://www.booking.com" class="icon"><img class="icon" 
+                    src="./media/icons/booking.png" /></a>
+            </div>
+        </div>
+
+        <div class="row extras">
+            <a href="#top" class="top_icon">Ir arriba</a>
+            <p class="copyright">Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="js/array.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
