@@ -8,6 +8,11 @@ let finalizarCompra = document.getElementById("finalizar");
 let formasDePago = document.querySelectorAll(".radiocobro");
 
 //funciones//
+const logica = async() => {
+    const productos = await obtenerProductos();
+    mostrarProductos(productos);
+}
+
 const mostrarProductos = (data) => {
     data.forEach((producto) => {
         const cardProducto = document.createElement("div");
@@ -36,7 +41,6 @@ const mostrarProductos = (data) => {
         btnAgregar.addEventListener("click", (e) => {
             let inputCantidad = document.getElementById(`cantidad-${producto.id}`)
             agregarAlCarrito(e.target.id, inputCantidad);
-            console.log(producto.disponibilidad)
             Toastify({
                 text: "Producto agregado",
                 duration: 3000,
@@ -96,8 +100,9 @@ function mostrarDatos(seleccion) {
     });
 }
 
-function agregarAlCarrito(id, cantidad) {
+async function agregarAlCarrito(id, cantidad) {
     cantPasajeros = parseInt(cantidad.value)
+    const productos = await obtenerProductos();
     prodEncontrado = productos.find((prod) => prod.id === parseInt(id));
     modificado = modificador(prodEncontrado);
     subTotal = multiplicarPasajeros(modificado, cantPasajeros);
@@ -182,7 +187,7 @@ let carrito;
 const arrayInt = [];
 
 //simulador seleccionar packs//
-mostrarProductos(productos);
+logica()
 
 finalizarCompra.addEventListener("click", (e) => {
     e.preventDefault();
