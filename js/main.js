@@ -20,7 +20,7 @@ const mostrarProductos = (data) => {
         <aside class="nleft col-md-5 foto${producto.nombre}">
         </aside>
         <aside class="nright col-md-6">
-            <h1 class="boxheader font-content">[${producto.id}] Pack ${producto.nombre}</h1>
+            <h1 class="boxheader font-content">[${producto.id}] Pack ${mayusculizar(producto.nombre)}</h1>
             <div class="boxcontent2 font-content grad1inv">${producto.descripcion}</div>
             <div class="row justify-content-around rowmargin">
                 <div class="boxprecio font-content grad1inv">
@@ -40,10 +40,11 @@ const mostrarProductos = (data) => {
         let btnAgregar = document.getElementById(`${producto.id}`);
         btnAgregar.addEventListener("click", (e) => {
             let inputCantidad = document.getElementById(`cantidad-${producto.id}`)
-            if (producto.clima != "Clouds" && producto.clima != "Clear" && producto.clima != "Drizzle"){
+            if (producto.clima != "Clouds" && producto.clima != "Clear" && producto.clima != "Drizzle" && producto.clima != "Rain"){
                 swal({
                     title: "Cuidado",
-                    text: "Por cuestiones climáticas, este pack no se encuentra disponible",
+                    text: `Por cuestiones climáticas, 
+                    este pack no se encuentra disponible`,
                     icon: "error",
                     button: "Cool",
                 });               
@@ -60,6 +61,11 @@ const mostrarProductos = (data) => {
         });
     });
 };
+
+function mayusculizar (palabra) {
+    let mayusculizada = palabra.charAt(0).toUpperCase()+ palabra.slice(1);
+    return mayusculizada
+}
 
 function conversor(precio, moneda) {
     let modificado = precio * moneda;
