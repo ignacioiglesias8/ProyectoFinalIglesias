@@ -7,7 +7,7 @@ function clima(x, y) {
     return fetch(url)
         .then(response => response.json())
         .then(data => {
-            let condicionClima = data.weather[0].description;
+            let condicionClima = data.weather[0].main;
             return condicionClima;
         });
 }

@@ -40,14 +40,23 @@ const mostrarProductos = (data) => {
         let btnAgregar = document.getElementById(`${producto.id}`);
         btnAgregar.addEventListener("click", (e) => {
             let inputCantidad = document.getElementById(`cantidad-${producto.id}`)
-            agregarAlCarrito(e.target.id, inputCantidad);
-            Toastify({
-                text: "Producto agregado",
-                duration: 3000,
-                style:{
-                    background: 'green'
-                }
-                }).showToast();
+            if (producto.clima != "Clouds" && producto.clima != "Clear" && producto.clima != "Drizzle"){
+                swal({
+                    title: "Cuidado",
+                    text: "Por cuestiones climáticas, este pack no se encuentra disponible",
+                    icon: "error",
+                    button: "Cool",
+                });               
+            }else{
+                agregarAlCarrito(e.target.id, inputCantidad);
+                Toastify({
+                    text: "Producto agregado",
+                    duration: 3000,
+                    style:{
+                        background: 'green'
+                    }
+                    }).showToast();
+            }
         });
     });
 };
