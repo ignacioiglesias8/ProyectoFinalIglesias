@@ -32,7 +32,7 @@ const mostrarProductos = (data) => {
                 </div>    
             </div>
             <div class="row justify-content-around rowmargin">
-                <button class="agregar boxprecio font-content grad1inv btn-primary" id="${producto.id}">Agregar</button>
+                <button class="boxprecio font-content grad1inv btn-primary" id="${producto.id}">Agregar</button>
             </div>
         </aside>
     </div>`;
@@ -160,6 +160,7 @@ function efectivo() {
 function debito() {
     formaDeCobro.innerText = `El monto total a cobrar es de $${totalRecuperado} 
     con tarjeta de débito`;
+    agregarBtn()
 }
 
 function credito() {
@@ -185,6 +186,14 @@ function credito() {
         [3] cuotas sin interés de $${division3} 
         [6] cuotas sin interés de $${division6}.`;
     }
+    agregarBtn()
+}
+
+function agregarBtn(){
+    const btnCobro = document.createElement("div");
+    btnCobro.innerHTML = `<div class="row justify-content-around rowmargin">
+    <button class="boxbtn font-btn font-content grad1inv btn-primary" id="boxBtnCobro">Cobrar</button>`;
+    formaDeCobro.appendChild(btnCobro)
 }
 
 //variables

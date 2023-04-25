@@ -34,6 +34,12 @@ html {
     font-family: "Times New Roman", Times, serif;
 }
 
+.font-btn {
+    font-size: 150%;
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+}
+
 .font-form {
     font-size: 1.8rem;
     text-align: left;
@@ -143,6 +149,14 @@ html {
     width: 18.5rem;
     margin: 0.5rem;
     padding: 1rem;
+    position: relative;
+}
+
+.boxbtn{
+    height: 5rem;
+    width: 18.5rem;
+    margin: 0.5rem;
+    padding: 0rem;
     position: relative;
 }
 
