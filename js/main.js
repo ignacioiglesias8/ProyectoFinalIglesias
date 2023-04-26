@@ -214,22 +214,28 @@ const arrayInt = [];
 logica()
 
 finalizarCompra.addEventListener("click", (e) => {
-    e.preventDefault();
-    montoTotal = sumarSubTotales(carrito);
-    localStorage.setItem("total", JSON.stringify(montoTotal))
-    totalRecuperado = parseInt(localStorage.getItem("total"));
-    boxCobro.innerText = `El total de la compra es de $${totalRecuperado}`;
-    const aparicion = document.querySelector('#magia')
-    aparicion.classList.add('mostrar') 
+    if (arrayInt.length <= 0){
+    }else{
+        e.preventDefault();
+        montoTotal = sumarSubTotales(carrito);
+        localStorage.setItem("total", JSON.stringify(montoTotal))
+        totalRecuperado = parseInt(localStorage.getItem("total"));
+        boxCobro.innerText = `El total de la compra es de $${totalRecuperado}`;
+        const aparicion = document.querySelector('#magia')
+        aparicion.classList.add('mostrar') 
+    }
 });
 
 limpiarCarro.addEventListener("click", () => {
-    boxCobro.innerText = `El total de la compra es de $`;
-    formaDeCobro.innerHTML = ``;
-    packsSeleccionados.innerHTML = ``;
-    carrito.splice(0, carrito.length);
-    arrayInt.splice(0, arrayInt.length);
-    borrarDatos(localStorage);
+    if (arrayInt.length <= 0){
+    }else{
+        boxCobro.innerText = `El total de la compra es de $`;
+        formaDeCobro.innerHTML = ``;
+        packsSeleccionados.innerHTML = ``;
+        carrito.splice(0, carrito.length);
+        arrayInt.splice(0, arrayInt.length);
+        borrarDatos(localStorage);
+    }
 });
 
 //simulador cobrar al cliente
