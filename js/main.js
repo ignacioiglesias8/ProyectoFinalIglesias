@@ -219,6 +219,8 @@ finalizarCompra.addEventListener("click", (e) => {
     localStorage.setItem("total", JSON.stringify(montoTotal))
     totalRecuperado = parseInt(localStorage.getItem("total"));
     boxCobro.innerText = `El total de la compra es de $${totalRecuperado}`;
+    const aparicion = document.querySelector('#magia')
+    aparicion.classList.add('mostrar') 
 });
 
 limpiarCarro.addEventListener("click", () => {

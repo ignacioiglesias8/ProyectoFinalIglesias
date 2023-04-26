@@ -245,6 +245,14 @@ html {
     margin: 2rem;
 }
 
+.oculto{
+    display: none;
+}
+
+.mostrar{
+    display: initial;
+}
+
 /*config. footer*/
 footer {
     color: white;
